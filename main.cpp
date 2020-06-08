@@ -54,6 +54,11 @@ int main()
         SuspendThread(t_spin_a.native_handle());
     }
 
+    {
+        // Uncomment this to "revive" the mutex:
+        // std::lock_guard<std::mutex> lock(mutex_);
+    }
+
     t_spin_a.detach();
     t_spin_b.join();
 
